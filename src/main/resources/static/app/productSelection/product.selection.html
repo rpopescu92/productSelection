@@ -1,0 +1,27 @@
+<div class="row">
+<div class="col-md-12" >
+    <div class="col-md-4" ng-repeat="c in catalogue">
+        <md-card>
+            <md-card-title>{{c.category}}</md-card-title>
+            <md-card-content>
+                <div ng-repeat="product in c.products">
+                    <md-checkbox ng-click="addToCheckout(product)" aria-label="Select product"></md-checkbox>
+                    <span>{{product}}</span>
+                </div>
+
+            </md-card-content>
+        </md-card>
+    </div>
+    <div class="col-md-4">
+        <md-card>
+            <md-card-title>Your selections</md-card-title>
+            <md-card-content>
+                <div ng-repeat="selection in selections">
+                    {{selection}}
+                </div>
+                <md-button ng-click="goToConfirmation()">CHECKOUT</md-button>
+            </md-card-content>
+        </md-card>
+    </div>
+    </div>
+</div>
