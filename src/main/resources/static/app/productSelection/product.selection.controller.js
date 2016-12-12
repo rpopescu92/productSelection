@@ -12,8 +12,7 @@
         $scope.catalogue = [];
         $scope.selections = [];
         $scope.products = [];
-        $scope.locationError = false;
-
+        $scope.errorMessage;
         $scope.addToCheckout = addToCheckout;
         $scope.goToConfirmation = goToConfirmation;
 
@@ -29,7 +28,7 @@
                             $scope.locationError = false;
                         },
                           function(error) {
-                              $scope.locationError = true;
+                              $scope.errorMessage = error.data.message;
                           });
         }
 
